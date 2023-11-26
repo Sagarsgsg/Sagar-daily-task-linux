@@ -574,27 +574,38 @@ Task using script:::--
 	}
  -----------------------------------------------------------
  df -h -->Is used to chek the disk utilization of each file s/m in our organisation.
-   1              2     3    4    5     6
+
+ 
 Filesystem      Size  Used Avail Use% Mounted on
+
 devtmpfs        4.0M     0  4.0M   0% /dev
+
 tmpfs           475M     0  475M   0% /dev/shm
+
 tmpfs           190M  2.9M  188M   2% /run
+
 /dev/xvda1      8.0G  1.5G  6.5G  19% /
+
 tmpfs           475M     0  475M   0% /tmp
+
 /dev/xvda128     10M  1.3M  8.7M  13% /boot/efi
+
 tmpfs            95M     0   95M   0% /run/user/1000
 
 
+
 -->if i want to print only use% coloumn using awk command
+
 :df -h | awk '{print $5}'
+
 	Use%
- 0%
- 0%
- 2%
- 19%
- 0%
- 13%
- 0%
+	 0%
+ 	0%
+ 	2%
+ 	19%
+	 0%
+ 	13%
+	 0%
  
 -->if i want to print any line using grep command
 
@@ -603,23 +614,33 @@ tmpfs            95M     0   95M   0% /run/user/1000
 		It will print the given pattern present in the line.
 		
 		/dev/xvda1      8.0G  1.5G  6.5G  19% /
+  
 		/dev/xvda128     10M  1.3M  8.7M  13% /boot/efi
 		
 -->if i want to print only 5th colounm data(how much is used) in this pattern awk command is used
 
 	:df -h | grep /dev/xvda1 |awk '{print $5}'
+ 
 		19%
+  
 		13%
 		
 -->if we want to remove the dollar symbol in above o/p
 
+
 : df -h |grep /dev/xvda1 |awk '{print $5}'|cut -d '%' -f1
+
 	19
+ 
 	13
+ 
  -------------------------------------------------------------------
+ 
  -->du-->disk usage
-   du -ah -->a- it list the size of all file or dir of the given path
-			 h-	it prints size of output in human readdable format.
+ 
+   du -ah 		-->a- it list the size of all file or dir of the given path
+   
+			-->h-  it prints size of output in human readdable format.
    du -ah /tmp
    
    
@@ -627,7 +648,8 @@ tmpfs            95M     0   95M   0% /run/user/1000
    sort::-
    
    It is used to arrange the record in the particular order.
-	du -ah|sort -hr
+	
+ 	du -ah|sort -hr
 	
    
    cmd line argument::-
@@ -644,10 +666,10 @@ tmpfs            95M     0   95M   0% /run/user/1000
   ---> Cleanup old loggs on basis of old logss..
 
 	==>Find
-    find command will search in actual file linux system. it provide advanced searching techniques.
+    	find command will search in actual file linux system. it provide advanced searching techniques.
 	it support search by file, folder, name, creation date, modified date, owner and permission.
 
 	==>Mtime
-			when was the last time the content of the file were modifide.if new contents were added, deleted or re[laced in a file,the modified timestramp is changed.
+			when was the last time the content of the file were modifide.if new contents were added, deleted or re[laced in 			a file,the modified timestramp is changed.
 			-mtime +30 => get the files greater than 30 days.
 			
