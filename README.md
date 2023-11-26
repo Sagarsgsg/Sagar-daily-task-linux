@@ -100,23 +100,27 @@ execute     x         1
 
 file permission is availabel in 3 types::-
 
-user:- 
+  user:- 
 	user permission 
-		rw- --->read and write permission is there for user
+ 
+	rw- --->read and write permission is there for user
 	
-group:- 
+  group:- 
 	group permission 
 	
-		r-x --->read and execute permission is there for group
+	r-x --->read and execute permission is there for group
 		
-other:-
+  other:-
 	other permission 
-		rwx --->read,write and execute permission is there for others
+ 
+	rwx --->read,write and execute permission is there for others
 ---------------------------------------------------------------------------------------------------------------	
-rwxrwxrwx-->
+	rwxrwxrwx-->
 
          user---->having read write and execution permission.
+	 
 	 group---->having read write and execution permission.
+  
 	 other---->having read write and execution permission.
 	 
 d-w---x--- ---> directory file
