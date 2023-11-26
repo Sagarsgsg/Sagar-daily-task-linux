@@ -4,15 +4,20 @@ $$$$$$$$$$$$ LINUX $$$$$$$$$$$$$$$$$$
 --->tac sag.txt
 
 -->head sag.txt --->>top to bottam by 10 lines
+
 -->head -n 25 sag.txt --->>top to bottom by 25 lines
 
 
 -->tail  sag.txt --->>bottom to top by 10 lines
+
 -->tail -n 25 sag.txt --->>bottom to top by 25 lines
+
 -->tail +25 sag.txt --->>it reads from 25th line to bottom
+
 -->tail -f sag.txt--->> we can see live log messages by -f option.
 
-+++++++++++++++++++++++++++++++++++++++++++Logs files+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
++++++Logs files++++++++++++
 
 User --->SBI APP--->SBI logfile contain app execution details,wt kind of requests are comming, who is accesing log files all the details are stored to logfile
 			logmessages will generated, if any functionality is not working the logfile is not updated. latest logs are added in the last postion bottom.
@@ -41,14 +46,14 @@ grep(global regular expression print)(ctl+f in windows)-->It is used to find a d
 			:grep "the" sagu.txt
 				o/p:-
 					the logfile is not updated. latest 
-			logs are added in the last postion bottom.
+					logs are added in the last postion bottom.
 			
 	---> if i want to print the line which contaian "THE"			
 			
-			:grep -i "THE" sagu.txt      # To ignore case sensitive we use grep command#
-					o/p:-
+			:grep -i "THE" sagu.txt      # To ignore case sensitive we use -i in grep command#
+						o/p:-
 						the logfile is not updated. latest 
-			logs are added in the last postion bottom.
+						logs are added in the last postion bottom.
 			
 	---> if i want to print the line which contaian occure "NullPointerException" in sagu.txt
 			:grep -i "NullPointerException" sagu.txt
@@ -60,7 +65,7 @@ grep(global regular expression print)(ctl+f in windows)-->It is used to find a d
 			
 	---> if i want to print the line which contaian occure "NullPointerException" in all the files in the sub directorys also.
 			:grep -R "NullPointerException" 
---->If i want ti install grep using below command.
+--->If i want to install grep using below command.
 	sudo yum install grep
 
 ---->To display subdirectory content using below command.
