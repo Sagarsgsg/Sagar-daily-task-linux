@@ -77,15 +77,18 @@ grep(global regular expression print)(ctl+f in windows)
 	:ls -lR
 
 
----->coping 1 file data into another file
+	---->coping 1 file data into another file
+ 
 	:cat t1.txt > t2.txt  or cp t1.txt t2.txt    # but we can not use cp command to copy more than 1 file data into another file
 
----->coping more than 1 file data into another file
+	---->coping more than 1 file data into another file
+ 
 	:cat t1.txt t3.txt > t2.txt
 
---->To compare the data in the files
+	--->to compare the data in the files
+ 
 	:diff t1.txt t3.txt
----------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------
 Day -4:::-
 
 Multiple ppl using same operating in the team member.
