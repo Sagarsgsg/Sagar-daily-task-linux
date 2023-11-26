@@ -355,15 +355,24 @@ What is Scripting???
 	
 -->Types of shell::--
 
-`1. bourne shell
-`2. bash shell --> most commanly used shell/default shell  -->echo $SHELL
+`1. bourne shell 
+
+`2. bash shell      --> most commanly used shell/default shell  -->echo $SHELL
+
  3. korn shell
- 4. Cshell
+ 
+ 4. Cshell 
+ 
  5. Tshell
+
  6. Zshell
  
+ 
  To check the shells in linux machine
-	cat /etc/shells
+ 
+	:cat /etc/shells
+
+ 
  -----------------------------------------------------------------------------------------------------------------
  What is sha-bang in shell script?
 
@@ -375,19 +384,27 @@ What is Scripting???
  Day-2::-
 
 components of scripting language.
+
 1.variables
+
 2. control statement
+
 3.case statements
+
 4.Loops
+
 5.Functions
-6. No datatyps--	In shell-scriptying every valu is treated as text or string.
+
+6. No datatyps--	     In shell-scriptying every valu is treated as text or string.
 	
 1.variables::-
 
 	Variables are containers to store the value.variables are key-value pairs.
 	
 		Two types::-
+  
 		1.environment or system variables.
+  
 			variables which are already defined and using by our s/m.(predefined variables)
 			
 			EX::-
@@ -395,24 +412,29 @@ components of scripting language.
 				$ echo $SHELL
 				
 		2. user defined variables
+  
 			Based on our requirements we can define  our own variables thos are called as user defined.
 			
 				EX::-
+    
 				name=sagar
 				age=31
 				
 				
-	We should not use special sybole in variables.
+	We should not use special symbole in variables.
 	
-	variable name should not start digit.
+	variable name should not start with digit.
 
 	Note: It is recomended to use upper cases charecters for variables.
 	
 	--> readonly variable::-
+ 
 			No one can change the variable value once it created we use below cmd.
-				readonly name=sagar.
+				
+    				readonly name=sagar.
 				
 	-->command line arguments::-
+ 
 		The arguments which will pass to the script file at the time of execution.
 		
 		cmd args are used to supply the values dynamicallyto the script file.
@@ -423,12 +445,16 @@ components of scripting language.
 		--> We can access cmd args in script file as below.
 		
 			$# -no of arguments.
+   
 			$0 -name of the script file.
+   
 			$1 -first cmd args
+   
 			$2 -second cmd args
 			.
 			.
 			$* - all cmd args
+   
    ------------------------------------------------------------------------------
    <COMMENT  
 			----------------------------		
@@ -436,31 +462,45 @@ components of scripting language.
 		
 		Ex::-
 		echo $#
+  
 		echo $0
-		<COMMENT  
+  
+		<COMMENT 
+  
 		echo $1	
+  
 		echo $2	
+  
 		COMMENT
 		
-		-->To hold/stop the execution for some seconds we can use below cmd
 		
-		:sleep
+		
+sleep:::-
+	-->To hold/stop the execution for some seconds we can use below cmd
 		
 		vi cmdargs.sh
 			#!/bin/bash
 			
 			echo $#
+   
 			echo $0
+   
 			sleep 30s
+   
 			echo $1
+   
 			echo $2
 			
 			O/p::-  :sh cmdline.sh sagar 31
 		
 			2
+   
 			cmdline.sh
+   
 			sagar
+   
 			31
+   
 			Sagar and 31 will print after 30 seconds.
 			
 ==============================================================================================================================================================================
@@ -468,31 +508,41 @@ components of scripting language.
 #############Conditional statement##########################
 
 if condition
+
 then
 	staetment
 else
+
 then
 	staetment
 	
 ---------------------------------------
 if condition
+
 then
 	staetment
 elif
+
 then
 	staetment
 else
+
 then
 	staetment
+
 fi--> closing the loop.
+
 --------------------------------------
+
 #####################WORKING WITH LOOPS###################
  
  -->Loops are used to execute multiple times.
+ 
 		Condition will satisfy it will execute the loop.
  
 	2 types::--
 		1.Range based loop.(for loop)
+  
 		2.Conditional based loop.(while loop)
 		
 ------------------------------------------------------
@@ -503,13 +553,17 @@ Task using script:::--
 	################ Function ###################
 	
 	->The big task can be divided into smaller task.
+ 
 	->Function is used to perform an action.
+ 
 	->Using function we can divide our task logically.
+ 
 	->Function are reusable.
 	
 	Syntax::-
 	
 	function functionName(){
+ 
 		//commands to execute
 	}
  -----------------------------------------------------------
