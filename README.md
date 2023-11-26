@@ -1,5 +1,4 @@
 $$$$$$$$$$$$ LINUX $$$$$$$$$$$$$$$$$$
-
 ---->Cat sag.txt
 
 --->tac sag.txt
@@ -292,10 +291,281 @@ IMP COMANDS
 ---> To remove apache2
 
 	:sudo apt remove apache2
-	
-Package manager:::---
+
+ Package manager:::---
 
 	It is a tool that allows user to install, remove, upgrade softwares on an linux operating system.
 
 		apt,yum, rpm,deb,choclate etc.
 		
+
+===========================================================================================================
+
+                                                        #############################
+                                                               SHELL SCRIPTING
+                                                         #############################
+													
+LINUX ARCHITECTURE::--
+
+User -----> shell --------->kernel ------------>Hardware
+
+What is SHELL??
+
+	Shell is responsible for reading commands given by user.
+	
+	shell will verify the cmd and will give instruction to the kernael to process that command.
+	
+	If command is invalid shell will give error.
+	
+	Kernal will execute our command with system hardware components.
+	
+	Shell acts as mediater b/w User and Kernal.
+	
+What is Scripting???
+
+	Scripting means set of commands mentioned in a file for execution.
+	
+	Scripting is used to automate our routine work.
+	
+	For EX::-
+	
+	:date, pwd, cal, ls -l,whoami.
+	
+-->Types of shell::--
+
+`1. bourne shell
+`2. bash shell --> most commanly used shell/default shell  -->echo $SHELL
+ 3. korn shell
+ 4. Cshell
+ 5. Tshell
+ 6. Zshell
+ 
+ To check the shells in linux machine
+	cat /etc/shells
+ -----------------------------------------------------------------------------------------------------------------
+ What is sha-bang in shell script?
+
+	sha-bang is used to specify which shell used to execute the script.
+	
+	syntax :
+	#!/bin/bash
+ ----------------------------------------------------------------------------------------
+ Day-2::-
+
+components of scripting language.
+1.variables
+2. control statement
+3.case statements
+4.Loops
+5.Functions
+6. No datatyps--	In shell-scriptying every valu is treated as text or string.
+	
+1.variables::-
+
+	Variables are containers to store the value.variables are key-value pairs.
+	
+		Two types::-
+		1.environment or system variables.
+			variables which are already defined and using by our s/m.(predefined variables)
+			
+			EX::-
+				$ echo $USER
+				$ echo $SHELL
+				
+		2. user defined variables
+			Based on our requirements we can define  our own variables thos are called as user defined.
+			
+				EX::-
+				name=sagar
+				age=31
+				
+				
+	We should not use special sybole in variables.
+	
+	variable name should not start digit.
+
+	Note: It is recomended to use upper cases charecters for variables.
+	
+	--> readonly variable::-
+			No one can change the variable value once it created we use below cmd.
+				readonly name=sagar.
+				
+	-->command line arguments::-
+		The arguments which will pass to the script file at the time of execution.
+		
+		cmd args are used to supply the values dynamicallyto the script file.
+		
+	ex::-
+		$ sh demo.sh sagar-devops bang
+		
+		--> We can access cmd args in script file as below.
+		
+			$# -no of arguments.
+			$0 -name of the script file.
+			$1 -first cmd args
+			$2 -second cmd args
+			.
+			.
+			$* - all cmd args
+   ------------------------------------------------------------------------------
+   <COMMENT  
+			----------------------------		
+		COMMENT
+		
+		Ex::-
+		echo $#
+		echo $0
+		<COMMENT  
+		echo $1	
+		echo $2	
+		COMMENT
+		
+		-->To hold/stop the execution for some seconds we can use below cmd
+		
+		:sleep
+		
+		vi cmdargs.sh
+			#!/bin/bash
+			
+			echo $#
+			echo $0
+			sleep 30s
+			echo $1
+			echo $2
+			
+			O/p::-  :sh cmdline.sh sagar 31
+		
+			2
+			cmdline.sh
+			sagar
+			31
+			Sagar and 31 will print after 30 seconds.
+			
+==============================================================================================================================================================================
+
+#############Conditional statement##########################
+
+if condition
+then
+	staetment
+else
+then
+	staetment
+	
+---------------------------------------
+if condition
+then
+	staetment
+elif
+then
+	staetment
+else
+then
+	staetment
+fi--> closing the loop.
+--------------------------------------
+#####################WORKING WITH LOOPS###################
+ 
+ -->Loops are used to execute multiple times.
+		Condition will satisfy it will execute the loop.
+ 
+	2 types::--
+		1.Range based loop.(for loop)
+		2.Conditional based loop.(while loop)
+		
+------------------------------------------------------
+Task using script:::--
+
+	We will divede big task into smaller task. so function concept came into picture.
+	
+	################ Function ###################
+	
+	->The big task can be divided into smaller task.
+	->Function is used to perform an action.
+	->Using function we can divide our task logically.
+	->Function are reusable.
+	
+	Syntax::-
+	
+	function functionName(){
+		//commands to execute
+	}
+ -----------------------------------------------------------
+ df -h -->Is used to chek the disk utilization of each file s/m in our organisation.
+   1              2     3    4    5     6
+Filesystem      Size  Used Avail Use% Mounted on
+devtmpfs        4.0M     0  4.0M   0% /dev
+tmpfs           475M     0  475M   0% /dev/shm
+tmpfs           190M  2.9M  188M   2% /run
+/dev/xvda1      8.0G  1.5G  6.5G  19% /
+tmpfs           475M     0  475M   0% /tmp
+/dev/xvda128     10M  1.3M  8.7M  13% /boot/efi
+tmpfs            95M     0   95M   0% /run/user/1000
+
+
+-->if i want to print only use% coloumn using awk command
+:df -h | awk '{print $5}'
+	Use%
+ 0%
+ 0%
+ 2%
+ 19%
+ 0%
+ 13%
+ 0%
+ 
+-->if i want to print any line using grep command
+
+	:df -h | grep /dev/xvda1
+	
+		It will print the given pattern present in the line.
+		
+		/dev/xvda1      8.0G  1.5G  6.5G  19% /
+		/dev/xvda128     10M  1.3M  8.7M  13% /boot/efi
+		
+-->if i want to print only 5th colounm data(how much is used) in this pattern awk command is used
+
+	:df -h | grep /dev/xvda1 |awk '{print $5}'
+		19%
+		13%
+		
+-->if we want to remove the dollar symbol in above o/p
+
+: df -h |grep /dev/xvda1 |awk '{print $5}'|cut -d '%' -f1
+	19
+	13
+ -------------------------------------------------------------------
+ -->du-->disk usage
+   du -ah -->a- it list the size of all file or dir of the given path
+			 h-	it prints size of output in human readdable format.
+   du -ah /tmp
+   
+   
+   
+   sort::-
+   
+   It is used to arrange the record in the particular order.
+	du -ah|sort -hr
+	
+   
+   cmd line argument::-
+   
+		echo $# Total number of parameters
+		echo $0 name of the script
+		echo $1 1st arg
+		echo $2
+		echo $3
+		echo $@ Complete list of argument 
+		echo $$ Process id of the script
+		echo $? Exit code of the script /exit status of previous command.
+  -------------------------------------------------------------------
+  ---> Cleanup old loggs on basis of old logss..
+
+	==>Find
+    find command will search in actual file linux system. it provide advanced searching techniques.
+	it support search by file, folder, name, creation date, modified date, owner and permission.
+
+	==>Mtime
+			when was the last time the content of the file were modifide.if new contents were added, deleted or re[laced in a file,the modified timestramp is changed.
+			-mtime +30 => get the files greater than 30 days.
+			
