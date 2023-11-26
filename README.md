@@ -23,52 +23,56 @@ User --->SBI APP--->SBI logfile contain app execution details,wt kind of request
 			logmessages will generated, if any functionality is not working the logfile is not updated. latest logs are added in the last postion bottom.
 			
 			
-			Note:- Tester will say im getting issue in application can u check log files... to devloper. so devloper need to check logfiles
+Note:- Tester will say im getting issue in application can u check log files... to devloper. so devloper need to check logfiles
 					latest logs are added in the bottom. To read latest log files we use tail command.
 					
 					
 wc-->word count command
+
 	-used to check hw many lines, words, characters are available in the file.
 	:wc data.log
-		70  372 2707 data.log
+	70  372 2707 data.log
 
-grep(global regular expression print)(ctl+f in windows)-->It is used to find a data/word in the file.
-						       -->grep cmd will process the text line by line it print the line which is matched with given pattern.
+grep(global regular expression print)(ctl+f in windows)
+
+-->It is used to find a data/word in the file.
+
+-->grep cmd will process the text line by line it print the line which is matched with given pattern.
 										
-	---> if i want to print the line which contaian "the"									
+---> if i want to print the line which contaian "the"									
 		
-		-->vi sagu.txt
-			logmessages will generated, if 
-			any functionality is not working 
-			the logfile is not updated. latest 
-			logs are added in the last postion bottom.
+	--->vi sagu.txt
+		logmessages will generated, if 
+		any functionality is not working 
+		the logfile is not updated. latest 
+		logs are added in the last postion bottom.
 			
-			:grep "the" sagu.txt
-				o/p:-
-					the logfile is not updated. latest 
-					logs are added in the last postion bottom.
+		:grep "the" sagu.txt
+		o/p:-
+		the logfile is not updated. latest 
+		logs are added in the last postion bottom.
 			
 	---> if i want to print the line which contaian "THE"			
 			
-			:grep -i "THE" sagu.txt      # To ignore case sensitive we use -i in grep command#
-						o/p:-
-						the logfile is not updated. latest 
-						logs are added in the last postion bottom.
+		:grep -i "THE" sagu.txt      # To ignore case sensitive we use -i in grep command#
+		o/p:-
+		the logfile is not updated. latest 
+		logs are added in the last postion bottom.
 			
 	---> if i want to print the line which contaian occure "NullPointerException" in sagu.txt
-			:grep -i "NullPointerException" sagu.txt
+		:grep -i "NullPointerException" sagu.txt
 
 
-    ---> if i want to print the line which contaian occure "NullPointerException" in all the files in the present working directory.
-			:grep -i "NullPointerException" *
+        ---> if i want to print the line which contaian occure "NullPointerException" in all the files in the present working directory.
+		:grep -i "NullPointerException" *
 			
 			
 	---> if i want to print the line which contaian occure "NullPointerException" in all the files in the sub directorys also.
-			:grep -R "NullPointerException" 
---->If i want to install grep using below command.
-	sudo yum install grep
-
----->To display subdirectory content using below command.
+		:grep -R "NullPointerException" 
+       --->If i want to install grep using below command.
+	        sudo yum install grep
+	 
+  ---->To display subdirectory content using below command.
 
 	:ls -lR
 
