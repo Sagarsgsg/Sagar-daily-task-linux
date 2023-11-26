@@ -140,11 +140,11 @@ d-w---x--- ---> directory file
 
 Add execute permission for user.
 
-	chmod u+x sagu.txt
+	:chmod u+x sagu.txt
 	
 Remove execute permission for user.
 
-   chmod u-x sagu.txt
+   	:chmod u-x sagu.txt
 
 Group::--
 
@@ -224,8 +224,11 @@ We can remove execute and write permission  for group.
 	
 	
 ---->>change the owner of thr file using chown
+
 	:sudo adduser sagar
+ 
 	:sudo passwd sagar
+ 
 		madhu@1.2.3
 
 	:sudo chown sagar sam.txt
@@ -233,6 +236,7 @@ We can remove execute and write permission  for group.
 	
 	
 ---->change the group of thr file using chown
+
 	:sudo chown :grouup name <file name>
 	
 	:sudo chown :sagar sam.txt
@@ -247,25 +251,27 @@ We can remove execute and write permission  for group.
 	locate -c *.txt --> it will print count of .txt file in the directory.
 	
 	locate sam.txt --> give the file path/location
-		/home/ubuntu/sam.txt
 		
-	locate will store the name in local db i.e locate db. When we execute locate command it will search in locate db (it wont search n actual file) 
-	perfomance wise locate wil be faster.
+  		/home/ubuntu/sam.txt
+		
+	locate will store the name in local db i.e locate db. When we execute locate command it will search in locate db (it wont search n actual file).perfomance wise locate wil be faster.
 	
 ==>Find
-    find command will search in actual file linux system. it provide advanced searching techniques.
+    	find command will search in actual file linux system. it provide advanced searching techniques.
 	it support search by file, folder, name, creation date, modified date, owner and permission.
 	
 	:sudo find /home - name sam.txt
-			/home/ubuntu/sam.txt
+			
+   		/home/ubuntu/sam.txt
 			
 			
 	:sudo find /home -type f -empty -->to find empty file in the home dir.
 	
 	::sudo find /home -type d -empty --> to find empty directories in the home dir.perfomance wise find wil be slower.
 	
----->man command to get documentation of any command we use man.
-	ex:ping
+	---->man command to get documentation of any command we use man.
+	
+ 		ex:ping
 	
 ===============================================================================================================================
 #################
