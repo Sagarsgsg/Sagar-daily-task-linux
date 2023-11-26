@@ -516,8 +516,6 @@ then
 else
 
 
-then
-
 	staetment
 	
 ---------------------------------------
@@ -535,9 +533,6 @@ then
 	staetment
  
 else
-
-
-then
 
 	staetment
  
