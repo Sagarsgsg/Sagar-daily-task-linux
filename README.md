@@ -94,9 +94,9 @@ Day -4:::-
 Multiple ppl using same operating in the team member.
 3 members in the team means we need to give access to exp member and also fresher
 
-read     r     4
-write    w     2
-execute  x     1
+read        r         4
+write       w         2
+execute     x         1
 
 file permission is availabel in 3 types::-
 
