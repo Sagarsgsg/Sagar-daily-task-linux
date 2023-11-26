@@ -355,9 +355,8 @@ What is Scripting???
 	
 -->Types of shell::--
 
-`1. bourne shell 
-
-`2. bash shell      --> most commanly used shell/default shell  -->echo $SHELL
+ 1. bourne shell 
+ 2. bash shell      --> most commanly used shell/default shell  -->echo $SHELL
 
  3. korn shell
  
@@ -387,7 +386,7 @@ components of scripting language.
 
 1.variables
 
-2. control statement
+2.control statement
 
 3.case statements
 
@@ -395,7 +394,7 @@ components of scripting language.
 
 5.Functions
 
-6. No datatyps--	     In shell-scriptying every valu is treated as text or string.
+6.No datatyps--	     In shell-scriptying every valu is treated as text or string.
 	
 1.variables::-
 
@@ -408,8 +407,8 @@ components of scripting language.
 			variables which are already defined and using by our s/m.(predefined variables)
 			
 			EX::-
-				$ echo $USER
-				$ echo $SHELL
+				: echo $USER
+				: echo $SHELL
 				
 		2. user defined variables
   
@@ -456,7 +455,7 @@ components of scripting language.
 			$* - all cmd args
    
    ------------------------------------------------------------------------------
-   <COMMENT  
+   <<COMMENT  
 			----------------------------		
 		COMMENT
 		
@@ -465,7 +464,7 @@ components of scripting language.
   
 		echo $0
   
-		<COMMENT 
+		<<COMMENT 
   
 		echo $1	
   
@@ -509,26 +508,39 @@ sleep:::-
 
 if condition
 
-then
-	staetment
-else
 
 then
+
+	staetment
+ 
+else
+
+
+then
+
 	staetment
 	
 ---------------------------------------
 if condition
 
+
 then
+
 	staetment
 elif
 
-then
-	staetment
-else
 
 then
+
 	staetment
+ 
+else
+
+
+then
+
+	staetment
+ 
 
 fi--> closing the loop.
 
