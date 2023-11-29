@@ -1,10 +1,11 @@
 #!/bin/bash
-	error_file=`cat /var/log/messages`
-	matched_error=`grep -i error /var/log/messages`
-	echo $matched_error
-	if [[ $? -eq 0 ]];
-	then
-			echo "found error in OS logs: $matched_error "
-	else
-			echo "no error in message logs"
-	fi
+echo "This script delete files which are older than 30 days  "
+path="$1"
+echo $path
+find $path  -mtime +30 -delete
+if [[ $? -eq 0 ]];
+then
+   echo "Files are successfully deleted "
+else
+   echo "deleteion was having some issue"
+fi
