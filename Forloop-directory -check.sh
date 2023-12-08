@@ -1,6 +1,6 @@
 #!/bin/bash
 for folder in $(find -type d);
-do
+do										#starting thefor loop#
 	echo "the folder is $folder"
 	if[ -d test ];
 	then
@@ -11,3 +11,4 @@ do
 			echo"test folder does not exist"
 			
 	fi
+done 		
